@@ -1,0 +1,158 @@
+.login-page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.side-form {
+    flex: 1;
+    background-color: #a2d2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* LADO DIREITO: Área onde vai ficar a foto de fundo */
+.side-image {
+    flex: 1.2; /* Ocupa 1.2 partes da tela */
+    background-image: url('/TurmaScooby.webp'); /* Caminho da sua foto */
+    background-size: cover; /* Faz a imagem preencher todo o espaço sem distorcer */
+    background-position: center; /* Centraliza o foco da imagem na tela */
+    background-repeat: no-repeat; /* Impede que a imagem fique se repetindo */
+}
+
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaçamento abaixo do logo para não grudar no texto */
+.logo-inside {
+    margin-bottom: 25px;
+}
+
+/* Cores do Logo (Laranja e Azul) */
+.scooby-text {
+    color: #ff9f1c;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.shop-text {
+    color: #00b4d8;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Ajustes nos textos de chamada */
+.login-header h2 {
+    font-size: 22px;
+    color: #2b2b2b;
+    margin: 0;
+}
+
+.login-header h3 {
+    font-size: 20px;
+    color: #2b2b2b;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+/* O parágrafo descritivo */
+.login-header p {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5; /* Dá uma folga saudável entre as linhas de leitura */
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+/* Garante que o formulário empilhe os grupos de input com um espaço entre eles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Espaço entre o bloco de e-mail e o bloco de senha */
+}
+
+/* Faz o label ficar em cima e o input embaixo */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;  /* Espaço entre o texto do label e a caixinha de digitar */
+}
+
+/* Estilo do texto do Label */
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+/* Estilo da caixinha onde o usuário digita */
+.input-group input {
+    width: 100%;
+    padding: 12px 16px; /* Dá uma altura confortável para digitar */
+    border: 1px solid #dbdbdb; /* Uma borda cinza bem sutil */
+    border-radius: 8px;  /* Cantos arredondados combinando com o card */
+    outline: none; /* Remove aquela borda preta feia padrão do navegador */
+    font-size: 14px;
+    box-sizing: border-box;  /* Garante que o padding não quebre a largura do input */
+    transition: border-color 0.3s; /* Deixa a mudança de cor suave */
+}
+
+/* Efeito quando o usuário clica para digitar na caixinha (Foco) */
+.input-group input:focus {
+    border-color: #00b4d8; /* A borda fica azul quando clicada */
+}
+
+/* Estilização do Botão de Login */
+.btn-login {
+    background-color: #ff9f1c; /* Laranja do Scooby */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer; /* Faz o cursor virar a mãozinha de clique */
+    margin-top: 10px; /* Dá um espacinho do campo de senha */
+    transition: background-color 0.2s;
+}
+
+/* Efeito quando passa o mouse por cima do botão */
+.btn-login:hover {
+    background-color: #e08a10; /* Um laranja um pouco mais escuro */
+}
+
+/* Centraliza o texto do rodapé e dá um espaço do formulário */
+.login-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Estilo do link de criar conta */
+.login-footer a {
+    color: #00b4d8; /* Azul do ScoobyShop */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: bold;
+}
+
+/* Efeito ao passar o mouse no link */
+.login-footer a:hover {
+    text-decoration: underline; /* O sublinhado só aparece quando passa o mouse */
+}
+
+/* REGRA DE OURO (Celular): Se a tela for menor que 768px, esconde o lado cinza */
+@media (max-width: 768px) {
+    .side-image {
+        display: none;
+    }
+}

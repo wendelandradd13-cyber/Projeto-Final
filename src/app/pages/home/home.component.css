@@ -59,13 +59,40 @@
   gap: 20px;
 }
 
-.util-links a, .auth-links a {
+.util-links a {
   display: flex;
   align-items: center;
   gap: 5px;
   text-decoration: none;
   color: #555555;
   font-size: 14px;
+}
+
+/* NOVO: Estilo exclusivo do Botão de Logout na barra superior */
+.auth-links .btn-logout {
+  background-color: #ff9f1c; /* Laranja do Scooby */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;       /* Formato arredondado de pílula */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(255, 159, 28, 0.2);
+}
+
+.auth-links .btn-logout:hover {
+  background-color: #e08a10; /* Laranja mais escuro no hover */
+  transform: translateY(-2px); /* Efeito flutuante */
+  box-shadow: 0 6px 10px rgba(255, 159, 28, 0.3);
+}
+
+.auth-links .btn-logout:active {
+  transform: translateY(0);
 }
 
 /* BARRA DE NAVEGAÇÃO */
@@ -110,25 +137,25 @@
 }
 
 .meio {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Título Principal */
 .hero-content h1 {
   font-size: 42px;
-  color: #2b2b2b; /* Um cinza escuro para não pesar tanto quanto o preto puro */
+  color: #2b2b2b; 
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
-/* Destaque colorido no título (o "Nós resolvemos!") */
+/* Destaque colorido no título */
 .hero-content h1 span {
-  color: #ff9f1c; /* O mesmo laranja do Scooby-text */
+  color: #ff9f1c; 
 }
 
 /* Parágrafo descritivo */
@@ -137,17 +164,17 @@
   color: #666666;
   line-height: 1.6;
   margin-bottom: 30px;
-  max-width: 500px; /* Evita que a linha do texto fique longa demais e canse a leitura */
+  max-width: 500px; 
 }
 
 /* Container dos botões */
 .hero-buttons {
   display: flex;
-  gap: 15px; /* Espaçamento entre os dois botões */
-  flex-wrap: wrap; /* Se a tela encolher muito, eles quebram de linha suavemente */
+  gap: 15px; 
+  flex-wrap: wrap; 
 }
 
-/* Estilo Base dos Botões (regras comuns a ambos) */
+/* Estilo Base dos Botões */
 .hero-buttons .btn-primary,
 .hero-buttons .btn-secondary {
   display: inline-flex;
@@ -158,26 +185,26 @@
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
-  transition: all 0.3s ease; /* Efeito suave ao passar o mouse */
+  transition: all 0.3s ease; 
 }
 
 /* Botão Principal: Laranja Scooby */
 .hero-buttons .btn-primary {
   background-color: #ff9f1c;
   color: #ffffff;
-  box-shadow: 0 4px 6px rgba(255, 159, 28, 0.2); /* Sombra leve com a cor do botão */
+  box-shadow: 0 4px 6px rgba(255, 159, 28, 0.2); 
 }
 
 .hero-buttons .btn-primary:hover {
-  background-color: #e08a10; /* Laranja um pouco mais escuro no hover */
-  transform: translateY(-2px); /* Sobe de leve o botão dando efeito 3D */
+  background-color: #e08a10; 
+  transform: translateY(-2px); 
   box-shadow: 0 6px 12px rgba(255, 159, 28, 0.3);
 }
 
 /* Botão Secundário: Azul Máquina do Mistério */
 .hero-buttons .btn-secondary {
   background-color: transparent;
-  color: #00b4d8; /* O mesmo azul do shop-text */
+  color: #00b4d8; 
   border: 2px solid #00b4d8;
 }
 
@@ -189,11 +216,11 @@
 
 .imagem {
   display: flex;
-  justify-content: flex-end; /* Empurra o conteúdo para o canto direito */
-  width: 100%;               /* Garante que o container ocupa a tela toda */
+  justify-content: flex-end; 
+  width: 100%;               
 }
 
 .imagem img {
-  max-width: 300px;          /* Ajuste o tamanho da imagem como preferir */
+  max-width: 300px;          
   height: auto;
 }
