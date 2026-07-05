@@ -13,24 +13,28 @@
                 <p>A fofura do seu pet não é segredo. Acesse para encontrar os melhores petiscos e brinquedos.</p>
             </div>
 
-            <form class="login-form">
+           <form class="login-form">
+        
+        <div class="input-group">
+          <label for="email">E-mail ou Usuário do Detetive</label>
+          <input type="email" id="email" placeholder="Seu e-mail..." required>
+        </div>
 
-                <div class="input-group">
-                    <label for="email">E-mail ou Usuário do Detetive</label>
-                    <input type="email" id="email" placeholder="Insira seu email" required>
-                </div>
+        <div class="input-group">
+          <label for="password">Senha Ultra-Secreta</label>
+          <input type="password" id="password" placeholder="Sua senha..." required>
+        </div>
 
-                <div class="input-group">
-                    <label for="password">Senha Ultra-Secreta</label>
-                    <input type="password" id="password" placeholder="Insira sua senha" required>
-                </div>
+        <div class="lgpd-consent">
+          <input type="checkbox" id="privacy-policy" required>
+          <label for="privacy-policy">
+            Estou ciente e aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> do ScoobyShop.
+          </label>
+        </div>
 
-                <button type="submit" class="btn-login">Entrar na Máquina do Mistério 🚐</button>
+        <button type="submit" class="btn-login" routerLink="/home">Entrar na Máquina do Mistério 🚐</button>
 
-                <div class="login-footer">
-                    <p>Não é um aliado? <a href="#">Crie uma conta de detetive. 🐾</a></p>
-                </div>
-            </form>
+      </form>
         </div>
     </div>
 

@@ -150,6 +150,43 @@
     text-decoration: underline; /* O sublinhado só aparece quando passa o mouse */
 }
 
+/* Bloco de Consentimento LGPD */
+.lgpd-consent {
+  display: flex;
+  align-items: flex-start; /* Alinha o checkbox pelo topo da primeira linha de texto */
+  gap: 8px;                /* Espaço entre a caixinha e o texto */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Estilo do Checkbox */
+.lgpd-consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #00b4d8;   /* Deixa a caixinha azul quando marcada, combinando com o site */
+  cursor: pointer;
+  margin-top: 2px;         /* Ajuste fino para alinhar perfeitamente com a primeira linha */
+}
+
+/* Estilo do Texto da LGPD */
+.lgpd-consent label {
+  font-size: 12px;         /* Texto um pouco menor por ser informativo legal */
+  color: #666666;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Links dos Termos e Políticas */
+.lgpd-consent label a {
+  color: #00b4d8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.lgpd-consent label a:hover {
+  text-decoration: underline;
+}
+
 /* REGRA DE OURO (Celular): Se a tela for menor que 768px, esconde o lado cinza */
 @media (max-width: 768px) {
     .side-image {

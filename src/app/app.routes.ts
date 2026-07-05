@@ -21,4 +21,22 @@ export const routes: Routes = [
         },
     },
 
+    {
+        path: "biscoitos",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import("./pages/biscoitos/biscoitos.component")
+            .then(c => c.BiscoitosComponent)
+        },
+    },
+
+    {
+        path: "salsicha-cia",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import("./pages/salsicha-cia/salsicha-cia.component")
+            .then(c => c.SalsichaCiaComponent)
+        },
+    },
+
 ];

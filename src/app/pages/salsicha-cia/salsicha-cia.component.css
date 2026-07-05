@@ -1,0 +1,127 @@
+/* ==========================================================================
+   BANNER DA CATEGORIA (Topo com as cores do Salsicha)
+   ========================================================================== */
+.category-banner {
+  background-color: #f1f5f0; /* Um verde bem clarinho e suave */
+  border-bottom: 1px solid #e2ebd5;
+  padding: 40px;
+  text-align: center;
+}
+
+.category-banner h2 {
+  font-size: 32px;
+  color: #556b2f; /* Verde oliva, combinando com a camiseta do Salsicha */
+  margin-bottom: 10px;
+}
+
+.category-banner p {
+  font-size: 16px;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   CONTAINER E GRADE DE PRODUTOS (CSS Grid)
+   ========================================================================== */
+.produtos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DO CARD DE PRODUTO
+   ========================================================================== */
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito Hover do Card */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(85, 107, 47, 0.1); /* Sombra com leve tom esverdeado */
+}
+
+/* Área da Imagem */
+.product-image {
+  background-color: #fafbfc;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.product-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Informações do Produto */
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+}
+
+.product-info .description {
+  font-size: 13px;
+  color: #777777;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Linha de Preço e Botão */
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.price-row .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+
+/* Botão de Compra Estilizado para o Salsicha */
+.btn-buy {
+  background-color: #556b2f; /* Verde Salsicha */
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-buy:hover {
+  background-color: #3e4f22; /* Verde mais escuro no hover */
+}

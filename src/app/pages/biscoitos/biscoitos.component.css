@@ -1,0 +1,142 @@
+/* ==========================================================================
+   BANNER DA CATEGORIA (Topo da Página)
+   ========================================================================== */
+.category-banner {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 40px;
+  text-align: center;
+}
+
+.category-banner h2 {
+  font-size: 32px;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+}
+
+.category-banner p {
+  font-size: 16px;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+/* ==========================================================================
+   CONTAINER E GRADE DE PRODUTOS (CSS Grid)
+   ========================================================================== */
+.produtos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.products-grid {
+  display: grid;
+  /* Cria colunas responsivas: o card tem no mínimo 280px e distribui o espaço */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px; /* Espaçamento entre os cards */
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DO CARD DE PRODUTO
+   ========================================================================== */
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden; /* Garante que as bordas da imagem sigam o arredondamento do card */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo interno de cima para baixo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no card */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Tag de Destaque (Ex: Mais Vendido) */
+.badge-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #ff9f1c; /* Laranja do Scooby */
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Área da Imagem */
+.product-image {
+  background-color: #fdfdfd;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.product-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Não deixa a foto do produto distorcer */
+}
+
+/* Informações do Produto */
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz essa parte preencher o espaço restante, alinhando os botões na mesma linha */
+}
+
+.product-info h3 {
+  font-size: 18px;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+}
+
+.product-info .description {
+  font-size: 13px;
+  color: #777777;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Empurra a linha de preço/botão sempre para o rodapé do card */
+}
+
+/* Linha de Preço e Botão */
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Preço na esquerda, botão na direita */
+  gap: 10px;
+}
+
+.price-row .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+
+/* Botão de Compra */
+.btn-buy {
+  background-color: #00b4d8; /* Azul Máquina do Mistério */
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-buy:hover {
+  background-color: #0096b4; /* Azul um pouco mais escuro */
+}
