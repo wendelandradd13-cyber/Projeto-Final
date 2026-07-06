@@ -1,0 +1,22 @@
+footer {
+  background-color: #FF9F1C;
+  border-top: 1px solid #f0f0f0;
+  padding: 20px 40px; /* Um espaçamento interno confortável */
+  display: flex;
+  justify-content: center; /* Centraliza na horizontal perfeitamente */
+  align-items: center;     /* Centraliza na vertical perfeitamente */
+  width: 100%;
+  
+  /* Removeu o flex-direction: column e o height: 100% */
+  /* Se você usou a técnica do post anterior para colar ele no fundo, mantenha as linhas abaixo: */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+footer .copyright {
+  font-size: 13px;
+  color: #fff;
+  text-align: center; /* Garante que o texto fique centralizado nele mesmo */
+  margin: 0;          /* Remove margens padrão do <p> que possam empurrar o texto */
+}

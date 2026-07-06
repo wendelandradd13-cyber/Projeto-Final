@@ -224,3 +224,20 @@
   max-width: 300px;          
   height: auto;
 }
+
+.fundo {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Faz a página ocupar a altura inteira da tela */
+}
+
+.meio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1; /* Preenche o espaço e empurra o footer para a base */
+}

@@ -2,7 +2,7 @@
    BANNER DA CATEGORIA (Topo com as cores do Salsicha)
    ========================================================================== */
 .category-banner {
-  background-color: #f1f5f0; /* Um verde bem clarinho e suave */
+  background-color: #FDF0D5; /* Um verde bem clarinho e suave */
   border-bottom: 1px solid #e2ebd5;
   padding: 40px;
   text-align: center;
@@ -10,7 +10,7 @@
 
 .category-banner h2 {
   font-size: 32px;
-  color: #556b2f; /* Verde oliva, combinando com a camiseta do Salsicha */
+  color: #2b2b2b;
   margin-bottom: 10px;
 }
 
@@ -111,7 +111,7 @@
 
 /* Botão de Compra Estilizado para o Salsicha */
 .btn-buy {
-  background-color: #556b2f; /* Verde Salsicha */
+  background-color: #00b4d8;
   color: white;
   border: none;
   padding: 10px 14px;
