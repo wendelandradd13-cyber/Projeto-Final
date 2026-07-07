@@ -39,4 +39,22 @@ export const routes: Routes = [
         },
     },
 
+    {
+        path: "linha-antimonstro",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import("./pages/linha-antimonstro/linha-antimonstro.component")
+            .then(c => c.LinhaAntimonstroComponent )
+        }
+    },
+
+    {
+        path: "maquina-misterio",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import("./pages/maquina-misterio/maquina-misterio.component")
+            .then(c => c.MaquinaMisterioComponent)
+        }
+    },
+
 ];

@@ -157,3 +157,80 @@
   /* Sem nenhuma propriedade estranha aqui, deixando o Grid trabalhar livre */
 }
 
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #4a3b32;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #ebd9b4; /* Linha sutil usando o bege suave da borda do banner */
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+/* Quando o usuário passa o mouse sobre os botões */
+.tab-btn:hover {
+  background-color: #ff9f1c; /* Laranja Scooby vibrante do seu footer/tags */
+  color: #ffffff;
+  border-color: #ff9f1c;
+  transform: translateY(-1px);
+}
+
+/* O botão que representa a página atual do usuário (Ativo) */
+.tab-btn.active {
+  background-color: #d66800; /* O mesmo Laranja Queimado do seu H2 */
+  color: #ffffff;
+  border-color: #d66800;
+  cursor: default;
+}
+
+.banner-top-bar {
+  display: flex;
+  justify-content: space-between; /* Empurra um para cada lado */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 25px auto; /* Centraliza a barra e joga o H2 para baixo */
+  width: 100%;
+}
+
+.btn-back-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #4a3b32; /* Marrom escuro suave */
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.btn-back-link:hover {
+  color: #d66800; /* Laranja queimado no hover */
+}
+
+.btn-logout {
+  background: none;
+  border: 1px solid #ebd9b4; /* Bordinha sutil igual a dos botões */
+  background-color: #ffffff;
+  color: #c93b3b; /* Vermelho discreto para indicar saída */
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #c93b3b;
+  color: #ffffff;
+  border-color: #c93b3b;
+}

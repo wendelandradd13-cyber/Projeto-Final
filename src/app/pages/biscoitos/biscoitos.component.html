@@ -1,13 +1,25 @@
 <div class="fundo">
     <header class="category-banner">
+
+        <div class="banner-top-bar">
+            <a href="" routerLink="/home" class="btn-back-link">← Voltar para a Home</a>
+            <button class="btn-logout" onclick="fazerLogout()">Sair 🚪</button>
+        </div>
         <h2>Biscoitos Scooby 🦴</h2>
         <p>Encontre os petiscos favoritos do doguinho mais famoso do mundo e garanta a coragem do seu melhor amigo!</p>
+        <div class="category-tabs">
+            <a href="" routerLink="/biscoitos" class="tab-btn active">Biscoitos Scooby</a>
+            <a href="" routerLink="/salsicha-cia" class="tab-btn active">Salsicha & Cia</a>
+            <a href="" class="tab-btn active">Linha Antimonstros</a>
+            <a href="" class="tab-btn active">Máquina de Mistério</a>
+            <a href="" class="tab-btn active">Baú de Disfarces</a>
+        </div>
     </header>
 
     <main class="produtos-container">
-        
+
         <section class="products-grid">
-            
+
             <div class="product-card">
                 <span class="badge-tag">Mais Vendido! 🔥</span>
                 <div class="product-image">
@@ -15,7 +27,8 @@
                 </div>
                 <div class="product-info">
                     <h3>Biscoito Scooby Tradicional</h3>
-                    <p class="description">A receita clássica que faz o Salsicha e o Scooby pularem de alegria. Edição em lata.</p>
+                    <p class="description">A receita clássica que faz o Salsicha e o Scooby pularem de alegria. Edição
+                        em lata.</p>
                     <div class="price-row">
                         <span class="price">R$ 29,90</span>
                         <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
@@ -29,7 +42,8 @@
                 </div>
                 <div class="product-info">
                     <h3>Snack Biscoito da Coragem</h3>
-                    <p class="description">Sabor frango defumado. Ideal para adestramento e para perder o medo de monstros.</p>
+                    <p class="description">Sabor frango defumado. Ideal para adestramento e para perder o medo de
+                        monstros.</p>
                     <div class="price-row">
                         <span class="price">R$ 18,50</span>
                         <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
@@ -43,7 +57,8 @@
                 </div>
                 <div class="product-info">
                     <h3>Super Biscoito Scooby Giga</h3>
-                    <p class="description">Um biscoito tamanho gigante para pets de grande porte (ou para os que têm muita fome).</p>
+                    <p class="description">Um biscoito tamanho gigante para pets de grande porte (ou para os que têm
+                        muita fome).</p>
                     <div class="price-row">
                         <span class="price">R$ 34,90</span>
                         <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
@@ -53,5 +68,5 @@
 
         </section>
     </main>
-    <app-rodape/>
+    <app-rodape />
 </div>
