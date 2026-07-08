@@ -142,13 +142,6 @@
   background-color: #0096b4; /* Azul um pouco mais escuro */
 }
 
-.fundo {
-  background-color: white;
-  position: relative;   /* Diz para o rodapé se guiar por essa div */
-  min-height: 100vh;    /* Força a página a ter sempre o tamanho da tela cheia */
-  padding-bottom: 60px; /* IMPORTANTE: Deixa um espaço em branco no fim para o footer não cobrir os produtos */
-}
-
 .produtos-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -233,4 +226,15 @@
   background-color: #c93b3b;
   color: #ffffff;
   border-color: #c93b3b;
+}
+
+.fundo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que a página ocupe no mínimo a altura total da tela */
+}
+
+/* Isso vai fazer a área do meio (seu conteúdo) esticar e empurrar o footer para o final */
+.flex {
+  flex: 1;
 }

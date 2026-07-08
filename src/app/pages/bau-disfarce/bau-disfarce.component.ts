@@ -3,11 +3,11 @@ import { RouterLink } from '@angular/router';
 import { RodapeComponent } from '../../componentes/rodape/rodape.component';
 
 @Component({
-  selector: 'app-maquina-misterio',
+  selector: 'app-bau-disfarce',
   imports: [RouterLink, RodapeComponent],
-  templateUrl: './maquina-misterio.component.html',
-  styleUrl: './maquina-misterio.component.css'
+  templateUrl: './bau-disfarce.component.html',
+  styleUrl: './bau-disfarce.component.css'
 })
-export class MaquinaMisterioComponent {
+export class BauDisfarceComponent {
 
 }

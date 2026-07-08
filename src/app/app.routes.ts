@@ -57,4 +57,13 @@ export const routes: Routes = [
         }
     },
 
+    {
+        path: "bau-disfarce",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import("./pages/bau-disfarce/bau-disfarce.component")
+            .then(c => c.BauDisfarceComponent)
+        }
+    }
+
 ];
