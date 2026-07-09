@@ -108,15 +108,15 @@
   color: #777777;
   line-height: 1.5;
   margin-bottom: 20px;
-  flex-grow: 1; /* Empurra a linha de preço/botão sempre para o rodapé do card */
-}
+  /* flex-grow: 1; Empurra a linha de preço/botão sempre para o rodapé do card*/
+} 
 
 /* Linha de Preço e Botão */
 .price-row {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Preço na esquerda, botão na direita */
-  gap: 10px;
+  gap: 7px;
 }
 
 .price-row .price {
@@ -142,12 +142,21 @@
   background-color: #0096b4; /* Azul um pouco mais escuro */
 }
 
+/* Modificado para virar um Flexbox igual à Home */
+.fundo {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Mantém a tela inteira ocupada no notebook */
+}
+
+/* Modificado: Ganhou o flex: 1 para crescer e empurrar o footer */
 .produtos-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
   width: 100%;
-  /* Sem nenhuma propriedade estranha aqui, deixando o Grid trabalhar livre */
+  flex: 1 0 auto; /* Crucial: preenche o espaço vazio e chuta o footer para a base */
 }
 
 .category-tabs {
@@ -228,15 +237,8 @@
   border-color: #c93b3b;
 }
 
-.fundo {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Garante que a página ocupe no mínimo a altura total da tela */
-}
-
-/* Isso vai fazer a área do meio (seu conteúdo) esticar e empurrar o footer para o final */
-.flex {
-  flex: 1;
+.fontes-bau {
+  font-size: 25px;
 }
 
 @media (max-width: 480px) {

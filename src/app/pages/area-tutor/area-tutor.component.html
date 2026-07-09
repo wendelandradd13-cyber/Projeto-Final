@@ -1,68 +1,132 @@
 <div class="fundo">
     <header class="category-banner">
         <div class="banner-top-bar">
-            <a routerLink="/home" class="btn-back-link">← Voltar para a Home</a>
-            <button class="btn-logout" (click)="logout()">Sair 🚪</button>
+            <a routerLink="/home" class="btn-back-link">
+                ← Voltar para Home
+            </a>
+            <button class="btn-logout" (click)="logout()">
+                Sair 🚪
+            </button>
         </div>
-        <h2>Central do Tutor: Câmera do Mistério 🕵️‍♂️</h2>
-        <p>Acompanhe em tempo real os cuidados e as transformações do seu parceiro de aventuras.</p>
+        <h2>🕵️ Central do Tutor: Câmera do Mistério</h2>
+        <p>
+            Acompanhe em tempo real cada etapa do banho e da tosa do seu melhor amigo.
+        </p>
     </header>
-
     <main class="tutor-container">
         <div class="tracking-card">
-
-            <!-- Cabeçalho do Card -->
             <div class="card-header">
                 <div>
-                    <h3>Status do {{ petSessao.nomePet }}</h3>
-                    <p class="service-type">Serviço: {{ petSessao.servico }}</p>
+                    <h2>{{ petSessao.nomePet }}</h2>
+                    <p>{{ petSessao.servico }}</p>
+                    <small>
+                        Tutor: {{ petSessao.tutor }}
+                    </small>
                 </div>
-                <span class="status-badge">Mistério Resolvido! 🎉</span>
-            </div>
+                <div class="status-box">
+                    <span class="status-badge">
 
-            <!-- Barra de Progresso Visual -->
+                        {{ petSessao.statusTexto }}
+
+                    </span>
+                </div>
+            </div>
+            <!-- Linha do tempo -->
             <div class="timeline">
-                <div class="step step-done">✓ Chegada</div>
-                <div class="step step-done">✓ No Banho</div>
-                <div class="step step-active">✨ Pronto!</div>
-            </div>
-
-            <!-- Seção do Antes e Depois (Só aparece se estiver concluído) -->
-            @if (petSessao.status === 'concluido') {
-            <div class="comparison-section">
-                <h4>Resultado da Investigação (Antes e Depois):</h4>
-
-                <div class="comparison-grid">
-                    <!-- Card ANTES -->
-                    <div class="pet-photo-card antes">
-                        <span class="photo-tag tag-antes">Monstro do Pântano (Antes) 🦠</span>
-                        <img [src]="petSessao.fotoAntes" alt="Pet antes do banho">
-                        <p>Pelos bagunçados e precisando de um trato urgente!</p>
+                <div class="step">
+                    <div
+                        class="circle"
+                        [class.done]="petSessao.etapa >= 1">
+                        🐾
                     </div>
-
-                    <div class="transform-arrow">➡️</div>
-
-                    <!-- Card DEPOIS -->
-                    <div class="pet-photo-card depois">
-                        <span class="photo-tag tag-depois">Herói da Turma (Depois) 💎</span>
-                        <img [src]="petSessao.fotoDepois" alt="Pet limpinho">
-                        <p>Cheiroso, tosado e pronto para desvendar mistérios!</p>
+                    <span>Chegada</span>
+                    <small>09:10</small>
+                </div>
+                <div class="line"></div>
+                <div class="step">
+                    <div
+                        class="circle"
+                        [class.done]="petSessao.etapa >= 2">
+                        🛁
+                    </div>
+                    <span>Banho</span>
+                    <small>09:25</small>
+                </div>
+                <div class="line"></div>
+                <div class="step">
+                    <div
+                        class="circle"
+                        [class.done]="petSessao.etapa >= 3">
+                        ✂️
+                    </div>
+                    <span>Tosa</span>
+                    <small>09:45</small>
+                </div>
+                <div class="line"></div>
+                <div class="step">
+                    <div
+                        class="circle"
+                        [class.done]="petSessao.etapa >= 4">
+                        🏠
+                    </div>
+                    <span>Pronto</span>
+                    <small>10:05</small>
+                </div>
+            </div>
+            <!-- Foto da etapa -->
+            <div class="etapa-atual">
+                <h3>{{ tituloEtapa }}</h3>
+                <img
+                    [src]="fotoAtual"
+                    alt="Foto atual">
+            </div>
+            <!-- Galeria -->
+            @if (petSessao.etapa == 4) {
+            <div class="comparison-section">
+                <h3>📷 Álbum da Transformação</h3>
+                <div class="progression-grid">
+                    <div class="pet-photo-card">
+                        <span class="photo-tag">
+                            Chegada
+                        </span>
+                        <img [src]="petSessao.fotoChegada">
+                    </div>
+                    <div class="transform-arrow">
+                        ➜
+                    </div>
+                    <div class="pet-photo-card">
+                        <span class="photo-tag">
+                            Banho
+                        </span>
+                        <img [src]="petSessao.fotoBanho">
+                    </div>
+                    <div class="transform-arrow">
+                        ➜
+                    </div>
+                    <div class="pet-photo-card">
+                        <span class="photo-tag">
+                            Resultado
+                        </span>
+                        <img [src]="petSessao.fotoDepois">
                     </div>
                 </div>
             </div>
             }
-
-            <!-- Notas do Tosador -->
+            <!-- Observações -->
             <div class="notes-box">
-                <h5>📝 Diário do Detetive (Notas do Profissional):</h5>
-                <p>{{ petSessao.observacao }}</p>
+                <h4>📝 Observações do Profissional</h4>
+                <p>
+                    {{ petSessao.observacao }}
+                </p>
             </div>
-
-            <!-- Botão Interativo -->
+            <!-- Botões -->
             <div class="card-footer">
-                <button class="btn-download" (click)="baixarFotos()">Salvar Fotos no Aparelho 📸</button>
+                <button
+                    class="btn-download"
+                    (click)="baixarFotos()">
+                    📸 Baixar Álbum
+                </button>
             </div>
-
         </div>
     </main>
     <app-rodape />

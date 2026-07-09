@@ -1,7 +1,5 @@
 /* Configurações gerais */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -246,6 +244,19 @@
   margin: 0 auto;
   flex: 1; /* Preenche o espaço e empurra o footer para a base */
 }
+.carrosel {
+  width: 800px;
+  max-width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-left:2% ;
+}
+
+.carrosel img {
+  height: 350px;
+  object-fit: cover;
+}
 
 /* Para telas de tablets e celulares (abaixo de 768px) */
 @media (max-width: 768px) {
@@ -289,5 +300,18 @@
   
   .imagem img {
     max-width: 220px; /* Encolhe um pouco a imagem no celular */
+  }
+
+  .carrosel {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .carrosel img {
+    height: 220px;
+  }
+
+  .hero-content {
+    padding-right: 0;
   }
 }
