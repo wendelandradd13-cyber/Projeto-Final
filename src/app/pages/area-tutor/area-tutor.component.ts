@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 
 import { RodapeComponent } from '../../componentes/rodape/rodape.component';
+import { PetService, Pet } from '../../pet.service';
 
 @Component({
   selector: 'app-area-tutor',
@@ -15,37 +16,41 @@ import { RodapeComponent } from '../../componentes/rodape/rodape.component';
   templateUrl: './area-tutor.component.html',
   styleUrls: ['./area-tutor.component.css']
 })
-export class AreaTutorComponent {
+export class AreaTutorComponent implements OnInit {
   private router = inject(Router);
-  petSessao = {
-    nomePet: 'Scooby-Doo',
-    tutor: 'Wendel Andrade',
-    servico: 'Banho & Tosa Premium',
-    etapa: 2,
-    statusTexto: '🛁 Seu pet está tomando banho.',
-    fotoChegada: 'cachorro-chegada.jpg',
-    fotoBanho: 'cachorro-banho.jpg',
-    fotoDepois: 'cachorro-pronto.jpg',
-    observacao:
-      'Scooby está muito tranquilo e colaborando durante todo o atendimento.'
-  };
+  private petService = inject(PetService);
 
+  petSessao!: Pet;
+
+  ngOnInit(): void {
+    this.petService.pet$.subscribe(pet => {
+      this.petSessao = pet;
+    });
+  }
+
+  // Retorna dinamicamente a foto com base no botão clicado na timeline
   get fotoAtual(): string {
+    if (!this.petSessao) return '';
+
     switch (this.petSessao.etapa) {
       case 1:
-        return this.petSessao.fotoChegada;
+        return this.petSessao.fotoChegada || 'etapa-chegada.png';
       case 2:
-        return this.petSessao.fotoBanho;
+        return this.petSessao.fotoBanho || 'etapa-banho.png';
       case 3:
-        return this.petSessao.fotoBanho;
+        // CORRIGIDO: Antes estava repetindo a foto do banho aqui
+        return this.petSessao.fotoTosa || 'etapa-tosa.png';
       case 4:
-        return this.petSessao.fotoDepois;
+        return this.petSessao.fotoDepois || 'etapa-pronto.png';
       default:
-        return this.petSessao.fotoChegada;
+        return 'assets/etapa-chegada.jpg';
     }
   }
 
+  // Retorna o texto explicativo da etapa atual
   get tituloEtapa(): string {
+    if (!this.petSessao) return '';
+
     switch (this.petSessao.etapa) {
       case 1:
         return '🐾 Seu pet acabou de chegar ao Pet Shop';
@@ -60,43 +65,15 @@ export class AreaTutorComponent {
     }
   }
 
-  atualizarStatus() {
-    switch (this.petSessao.etapa) {
-      case 1:
-        this.petSessao.statusTexto =
-          '🐾 Seu pet chegou ao Pet Shop.';
-        break;
-      case 2:
-        this.petSessao.statusTexto =
-          '🛁 Seu pet está tomando banho.';
-        break;
-      case 3:
-        this.petSessao.statusTexto =
-          '✂️ Seu pet está realizando a tosa.';
-        break;
-      case 4:
-        this.petSessao.statusTexto =
-          '✅ Atendimento finalizado.';
-        break;
-    }
-  }
-
-  proximaEtapa() {
-    if (this.petSessao.etapa < 4) {
-      this.petSessao.etapa++;
-      this.atualizarStatus();
-    }
-  }
-
-  voltarEtapa() {
-    if (this.petSessao.etapa > 1) {
-      this.petSessao.etapa--;
-      this.atualizarStatus();
-    }
-  }
-
   baixarFotos() {
     alert('📸 Download iniciado!');
+  }
+  
+  // Atualiza a etapa quando o tutor clica nos botões da timeline
+  mostrarEtapa(etapa: number) {
+    if (this.petSessao) {
+      this.petSessao.etapa = etapa;
+    }
   }
 
   logout() {

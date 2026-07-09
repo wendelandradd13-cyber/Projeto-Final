@@ -13,6 +13,7 @@
             Acompanhe em tempo real cada etapa do banho e da tosa do seu melhor amigo.
         </p>
     </header>
+
     <main class="tutor-container">
         <div class="tracking-card">
             <div class="card-header">
@@ -25,109 +26,83 @@
                 </div>
                 <div class="status-box">
                     <span class="status-badge">
-
                         {{ petSessao.statusTexto }}
-
                     </span>
                 </div>
             </div>
-            <!-- Linha do tempo -->
+
+            <!-- Linha do tempo interativa -->
             <div class="timeline">
-                <div class="step">
-                    <div
-                        class="circle"
-                        [class.done]="petSessao.etapa >= 1">
-                        🐾
-                    </div>
-                    <span>Chegada</span>
-                    <small>09:10</small>
-                </div>
-                <div class="line"></div>
-                <div class="step">
-                    <div
-                        class="circle"
-                        [class.done]="petSessao.etapa >= 2">
-                        🛁
-                    </div>
-                    <span>Banho</span>
-                    <small>09:25</small>
-                </div>
-                <div class="line"></div>
-                <div class="step">
-                    <div
-                        class="circle"
-                        [class.done]="petSessao.etapa >= 3">
-                        ✂️
-                    </div>
-                    <span>Tosa</span>
-                    <small>09:45</small>
-                </div>
-                <div class="line"></div>
-                <div class="step">
-                    <div
-                        class="circle"
-                        [class.done]="petSessao.etapa >= 4">
-                        🏠
-                    </div>
-                    <span>Pronto</span>
-                    <small>10:05</small>
-                </div>
-            </div>
-            <!-- Foto da etapa -->
-            <div class="etapa-atual">
-                <h3>{{ tituloEtapa }}</h3>
-                <img
-                    [src]="fotoAtual"
-                    alt="Foto atual">
-            </div>
-            <!-- Galeria -->
-            @if (petSessao.etapa == 4) {
-            <div class="comparison-section">
-                <h3>📷 Álbum da Transformação</h3>
-                <div class="progression-grid">
-                    <div class="pet-photo-card">
-                        <span class="photo-tag">
-                            Chegada
-                        </span>
-                        <img [src]="petSessao.fotoChegada">
-                    </div>
-                    <div class="transform-arrow">
-                        ➜
-                    </div>
-                    <div class="pet-photo-card">
-                        <span class="photo-tag">
-                            Banho
-                        </span>
-                        <img [src]="petSessao.fotoBanho">
-                    </div>
-                    <div class="transform-arrow">
-                        ➜
-                    </div>
-                    <div class="pet-photo-card">
-                        <span class="photo-tag">
-                            Resultado
-                        </span>
-                        <img [src]="petSessao.fotoDepois">
-                    </div>
-                </div>
-            </div>
-            }
-            <!-- Observações -->
-            <div class="notes-box">
-                <h4>📝 Observações do Profissional</h4>
-                <p>
-                    {{ petSessao.observacao }}
-                </p>
-            </div>
-            <!-- Botões -->
-            <div class="card-footer">
-                <button
-                    class="btn-download"
-                    (click)="baixarFotos()">
-                    📸 Baixar Álbum
+                <button class="step" [class.step-active]="petSessao.etapa === 1" (click)="mostrarEtapa(1)">
+                    🐾 Chegada
+                </button>
+                <button class="step" [class.step-active]="petSessao.etapa === 2" (click)="mostrarEtapa(2)">
+                    🛁 Banho
+                </button>
+                <button class="step" [class.step-active]="petSessao.etapa === 3" (click)="mostrarEtapa(3)">
+                    ✂️ Tosa
+                </button>
+                <button class="step" [class.step-active]="petSessao.etapa === 4" (click)="mostrarEtapa(4)">
+                    ✅ Pronto
                 </button>
             </div>
+
+            <!-- Exibição da Etapa Selecionada/Atual -->
+            <div class="etapa-atual-container">
+                <h3>{{ tituloEtapa }}</h3>
+                <div class="foto-progresso">
+                    <img [src]="fotoAtual" [alt]="tituloEtapa">
+                </div>
+            </div>
+        </div>
+
+        <!-- Álbum completo da Transformação (Exibido apenas na Etapa 4) -->
+        @if (petSessao.etapa === 4) {
+        <div class="comparison-section">
+            <h3>📷 Álbum da Transformação</h3>
+            <div class="progression-grid">
+                <div class="pet-photo-card">
+                    <span class="photo-tag">Chegada</span>
+                    <img src="etapa-chegada.png" alt="Chegada do Pet">
+                </div>
+                
+                <div class="transform-arrow">➜</div>
+                
+                <div class="pet-photo-card">
+                    <span class="photo-tag">Banho</span>
+                    <img src="etapa-banho.png" alt="Banho do Pet">
+                </div>
+                
+                <div class="transform-arrow">➜</div>
+                
+                <div class="pet-photo-card">
+                    <span class="photo-tag">Tosa</span>
+                    <img src="etapa-tosa.png" alt="Tosa do Pet">
+                </div>
+                
+                <div class="transform-arrow">➜</div>
+                
+                <div class="pet-photo-card">
+                    <span class="photo-tag">Resultado</span>
+                    <img src="etapa-pronto.png" alt="Pet Pronto">
+                </div>
+            </div>
+        </div>
+        }
+
+        <!-- Observações -->
+        <div class="notes-box">
+            <h4>📝 Observações do Profissional</h4>
+            <p>{{ petSessao.observacao }}</p>
+        </div>
+
+        <!-- Botões -->
+        <div class="card-footer">
+            <button class="btn-download" (click)="baixarFotos()">
+                📸 Baixar Álbum Completo
+            </button>
         </div>
     </main>
+
     <app-rodape />
 </div>
