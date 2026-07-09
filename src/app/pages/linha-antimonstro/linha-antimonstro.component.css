@@ -142,19 +142,21 @@
   background-color: #0096b4; /* Azul um pouco mais escuro */
 }
 
+/* Modificado para virar um Flexbox igual à Home */
 .fundo {
   background-color: white;
-  position: relative;   /* Diz para o rodapé se guiar por essa div */
-  min-height: 100vh;    /* Força a página a ter sempre o tamanho da tela cheia */
-  padding-bottom: 60px; /* IMPORTANTE: Deixa um espaço em branco no fim para o footer não cobrir os produtos */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Mantém a tela inteira ocupada no notebook */
 }
 
+/* Modificado: Ganhou o flex: 1 para crescer e empurrar o footer */
 .produtos-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
   width: 100%;
-  /* Sem nenhuma propriedade estranha aqui, deixando o Grid trabalhar livre */
+  flex: 1 0 auto; /* Crucial: preenche o espaço vazio e chuta o footer para a base */
 }
 
 .category-tabs {
@@ -233,4 +235,10 @@
   background-color: #c93b3b;
   color: #ffffff;
   border-color: #c93b3b;
+}
+
+@media (max-width: 480px) {
+  .produtos-container {
+    padding: 20px 10px; /* Menos espaço nas bordas em celulares pequenos */
+  }
 }

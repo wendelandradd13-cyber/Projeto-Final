@@ -1,0 +1,69 @@
+<div class="fundo">
+    <header class="category-banner">
+        <div class="banner-top-bar">
+            <a routerLink="/home" class="btn-back-link">← Voltar para a Home</a>
+            <button class="btn-logout" (click)="logout()">Sair 🚪</button>
+        </div>
+        <h2>Central do Tutor: Câmera do Mistério 🕵️‍♂️</h2>
+        <p>Acompanhe em tempo real os cuidados e as transformações do seu parceiro de aventuras.</p>
+    </header>
+
+    <main class="tutor-container">
+        <div class="tracking-card">
+
+            <!-- Cabeçalho do Card -->
+            <div class="card-header">
+                <div>
+                    <h3>Status do {{ petSessao.nomePet }}</h3>
+                    <p class="service-type">Serviço: {{ petSessao.servico }}</p>
+                </div>
+                <span class="status-badge">Mistério Resolvido! 🎉</span>
+            </div>
+
+            <!-- Barra de Progresso Visual -->
+            <div class="timeline">
+                <div class="step step-done">✓ Chegada</div>
+                <div class="step step-done">✓ No Banho</div>
+                <div class="step step-active">✨ Pronto!</div>
+            </div>
+
+            <!-- Seção do Antes e Depois (Só aparece se estiver concluído) -->
+            @if (petSessao.status === 'concluido') {
+            <div class="comparison-section">
+                <h4>Resultado da Investigação (Antes e Depois):</h4>
+
+                <div class="comparison-grid">
+                    <!-- Card ANTES -->
+                    <div class="pet-photo-card antes">
+                        <span class="photo-tag tag-antes">Monstro do Pântano (Antes) 🦠</span>
+                        <img [src]="petSessao.fotoAntes" alt="Pet antes do banho">
+                        <p>Pelos bagunçados e precisando de um trato urgente!</p>
+                    </div>
+
+                    <div class="transform-arrow">➡️</div>
+
+                    <!-- Card DEPOIS -->
+                    <div class="pet-photo-card depois">
+                        <span class="photo-tag tag-depois">Herói da Turma (Depois) 💎</span>
+                        <img [src]="petSessao.fotoDepois" alt="Pet limpinho">
+                        <p>Cheiroso, tosado e pronto para desvendar mistérios!</p>
+                    </div>
+                </div>
+            </div>
+            }
+
+            <!-- Notas do Tosador -->
+            <div class="notes-box">
+                <h5>📝 Diário do Detetive (Notas do Profissional):</h5>
+                <p>{{ petSessao.observacao }}</p>
+            </div>
+
+            <!-- Botão Interativo -->
+            <div class="card-footer">
+                <button class="btn-download" (click)="baixarFotos()">Salvar Fotos no Aparelho 📸</button>
+            </div>
+
+        </div>
+    </main>
+    <app-rodape />
+</div>

@@ -238,3 +238,9 @@
 .flex {
   flex: 1;
 }
+
+@media (max-width: 480px) {
+  .produtos-container {
+    padding: 20px 10px; /* Menos espaço nas bordas em celulares pequenos */
+  }
+}

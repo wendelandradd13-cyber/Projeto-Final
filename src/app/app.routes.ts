@@ -64,6 +64,15 @@ export const routes: Routes = [
             return import("./pages/bau-disfarce/bau-disfarce.component")
             .then(c => c.BauDisfarceComponent)
         }
-    }
+    },
+
+    {
+        path: "area-tutor",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import("./pages/area-tutor/area-tutor.component")
+            .then(c => c.AreaTutorComponent)
+        }
+    },
 
 ];

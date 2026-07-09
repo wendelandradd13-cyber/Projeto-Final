@@ -1,70 +1,56 @@
 <div class="fundo">
-    <header class="category-banner">
-        <div class="banner-top-bar">
-            <a routerLink="/home" class="btn-back-link">← Voltar para a Home</a>
-            <button class="btn-logout">Sair 🚪</button>
-        </div>
+    <app-category-header titulo="Máquina de Mistério 🚐"
+        descricao="Acessórios de transporte e segurança para o seu pet acompanhar você em todas as aventuras e viagens!">
+    </app-category-header>
 
-        <h2>Máquina de Mistério 🚐</h2>
-        <p>Acessórios de transporte e segurança para o seu pet acompanhar você em todas as aventuras e viagens!</p>
-
-        <div class="category-tabs">
-            <a routerLink="/biscoitos" class="tab-btn">Biscoitos Scooby</a>
-            <a routerLink="/salsicha-cia" class="tab-btn">Salsicha & Cia</a>
-            <a routerLink="/linha-antimonstro" class="tab-btn">Linha Antimonstros</a>
-            <a routerLink="/maquina-misterio" class="tab-btn active">Máquina de Mistério</a>
-            <a routerLink="/bau-disfarce" class="tab-btn">Baú de Disfarces</a>
-        </div>
-    </header>
-
-        <main class="produtos-container">
-            <section class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="cinto-seguranca.png" alt="Cinto de Segurança Pet">
-                    </div>
-                    <div class="product-info">
-                        <h3>Cinto de Segurança, Pé na Estrada</h3>
-                        <p class="description">Cinto ajustável que engata direto no fecho do carro. Protege seu parceiro em
-                            qualquer curva fechada ou perseguição.</p>
-                        <div class="price-row">
-                            <span class="price">R$ 28,90</span>
-                            <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
-                        </div>
+    <main class="produtos-container">
+        <section class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="cinto-seguranca.png" alt="Cinto de Segurança Pet">
+                </div>
+                <div class="product-info">
+                    <h3>Cinto de Segurança, Pé na Estrada</h3>
+                    <p class="description">Cinto ajustável que engata direto no fecho do carro. Protege seu parceiro em
+                        qualquer curva fechada ou perseguição.</p>
+                    <div class="price-row">
+                        <span class="price">R$ 28,90</span>
+                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
-                <div class="product-card">
-                    <span class="badge-tag">Mais Vendido! 🔥</span>
-                    <div class="product-image">
-                        <img src="capa-banco.png" alt="Capa Protetora para Carro">
-                    </div>
-                    <div class="product-info">
-                        <h3>Capa Protetora Anti-Lama</h3>
-                        <p class="description">Perfeita para proteger os bancos do carro após passeios no parque ou
-                            investigações em pântanos assombrados. Impermeável.</p>
-                        <div class="price-row">
-                            <span class="price">R$ 89,90</span>
-                            <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
-                        </div>
+            </div>
+            <div class="product-card">
+                <span class="badge-tag">Mais Vendido! 🔥</span>
+                <div class="product-image">
+                    <img src="capa-banco.png" alt="Capa Protetora para Carro">
+                </div>
+                <div class="product-info">
+                    <h3>Capa Protetora Anti-Lama</h3>
+                    <p class="description">Perfeita para proteger os bancos do carro após passeios no parque ou
+                        investigações em pântanos assombrados. Impermeável.</p>
+                    <div class="price-row">
+                        <span class="price">R$ 89,90</span>
+                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
-    
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="garrafa-portatil.png" alt="Garrafa de Água Portátil">
-                    </div>
-                    <div class="product-info">
-                        <h3>Garrafa Portátil Sede de Aventura</h3>
-                        <p class="description">Hidratação rápida na estrada. Garrafa 2 em 1 com bico anatômico para o cão
-                            beber
-                            água em qualquer lugar.</p>
-                        <div class="price-row">
-                            <span class="price">R$ 34,90</span>
-                            <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
-                        </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="garrafa-portatil.png" alt="Garrafa de Água Portátil">
+                </div>
+                <div class="product-info">
+                    <h3>Garrafa Portátil Sede de Aventura</h3>
+                    <p class="description">Hidratação rápida na estrada. Garrafa 2 em 1 com bico anatômico para o cão
+                        beber
+                        água em qualquer lugar.</p>
+                    <div class="price-row">
+                        <span class="price">R$ 34,90</span>
+                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
-            </section>
-        </main>
-        <app-rodape />
+            </div>
+        </section>
+    </main>
+    <app-rodape />
 </div>

@@ -1,20 +1,8 @@
 <div class="fundo">
-    <header class="category-banner">
-        <div class="banner-top-bar">
-            <a href="" routerLink="/home" class="btn-back-link">← Voltar para a Home</a>
-            <button class="btn-logout" onclick="fazerLogout()">Sair 🚪</button>
-        </div>
-        <h2>Baú de Disfarces 🎭</h2>
-        <p>De gravatas elegantes a fantasias divertidas, encontre o disfarce perfeito para o seu parceiro de mistérios
-            desmascarar qualquer vilão com muito estilo!</p>
-        <div class="category-tabs">
-            <a href="" routerLink="/biscoitos" class="tab-btn">Biscoitos Scooby</a>
-            <a href="" routerLink="/salsicha-cia" class="tab-btn">Salsicha & Cia</a>
-            <a href="" routerLink="/linha-antimonstro" class="tab-btn">Linha Antimonstros</a>
-            <a href="" routerLink="/maquina-misterio" class="tab-btn">Máquina de Mistério</a>
-            <a href="" routerLink="bau-disfarce" class="tab-btn active">Baú de Disfarces</a>
-        </div>
-    </header>
+    <app-category-header titulo="Baú de Disfarces 🎭" descricao="De gravatas elegantes a fantasias divertidas, encontre o disfarce perfeito para o seu parceiro de mistérios
+            desmascarar qualquer vilão com muito estilo!">
+    </app-category-header>
+
     <div class="flex">
         <main class="produtos-container">
             <section class="products-grid">
@@ -32,7 +20,7 @@
                         <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
-        
+
                 <div class="product-card">
                     <span class="badge-tag">Mais Vendido! 🔥</span>
                     <div class="product-image">
@@ -40,7 +28,8 @@
                     </div>
                     <div class="product-info">
                         <h2>Lenço Investigador Fred</h2>
-                        <p>Inspirado no famoso lenço laranja do Fred. Dá um toque de liderança, elegância e estilo para o
+                        <p>Inspirado no famoso lenço laranja do Fred. Dá um toque de liderança, elegância e estilo para
+                            o
                             seu pet chamar a atenção em qualquer passeio na Máquina de Mistério.</p>
                     </div>
                     <div class="price-row">
@@ -48,14 +37,15 @@
                         <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
-        
+
                 <div class="product-card">
                     <div class="product-image">
                         <img src="sobretudo.png" alt="Uma roupinha pet estilo sobretudo xadrez ou marrom de detetive.">
                     </div>
                     <div class="product-info">
                         <h2>Sobretudo, Mestre dos Disfarces</h2>
-                        <p>Um casaco elegante de tecido macio para os dias mais frios de investigação. Perfeito para pets
+                        <p>Um casaco elegante de tecido macio para os dias mais frios de investigação. Perfeito para
+                            pets
                             intelectuais que adoram desvendar mistérios e decifrar pistas.</p>
                     </div>
                     <div class="price-row">

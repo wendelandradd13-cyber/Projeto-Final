@@ -8,6 +8,9 @@
 
 .fundo {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o app ocupe a tela inteira do notebook */
 }
 
 /* BARRA SUPERIOR */
@@ -141,8 +144,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 40px;
+  width: 100%;       /* Ocupa a largura total disponível */
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;    
+  flex: 1 0 auto;    /* Força o conteúdo a crescer e ocupar o espaço vazio */
 }
 
 /* Título Principal */
@@ -240,4 +245,49 @@
   max-width: 1200px;
   margin: 0 auto;
   flex: 1; /* Preenche o espaço e empurra o footer para a base */
+}
+
+/* Para telas de tablets e celulares (abaixo de 768px) */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column; /* Empilha logo e botão de sair */
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .nav-bar {
+    padding: 10px 20px;
+  }
+
+  .nav-bar ul {
+    flex-direction: column; /* Menu de categorias vira uma lista vertical */
+    gap: 15px;
+  }
+
+  .meio {
+    flex-direction: column; /* Texto em cima, imagem do Scooby embaixo */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px; /* Diminui o título para não quebrar feio */
+  }
+
+  .hero-content p {
+    margin: 0 auto 20px auto; /* Centraliza o texto */
+  }
+
+  .hero-buttons {
+    justify-content: center; /* Centraliza os botões */
+  }
+
+  .imagem {
+    justify-content: center; /* Centraliza o Scooby-Doo */
+    margin-top: 30px;
+  }
+  
+  .imagem img {
+    max-width: 220px; /* Encolhe um pouco a imagem no celular */
+  }
 }

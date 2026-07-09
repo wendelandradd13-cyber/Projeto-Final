@@ -9,14 +9,14 @@
 
         <!-- Parte de Logout (Área do Detetive Autenticado) -->
         <div class="auth-links">
-            <button class="btn-logout">
+            <button class="btn-logout" (click)="logout()">
                 Sair do Caso 🚪🏃‍♂️
             </button>
         </div>
 
     </div>
 
-    <!-- BARRA DE NAVEGAÇÃO DE CATEGORIAS -->
+   <!-- BARRA DE NAVEGAÇÃO DE CATEGORIAS -->
     <nav class="nav-bar">
         <ul>
             <li><a href="#" routerLink="/biscoitos">Biscoitos Scooby <span class="material-symbols-outlined arrow"></span></a></li>
@@ -27,7 +27,7 @@
         </ul>
     </nav>
 
-    <div class="meio">
+     <div class="meio">
 
         <!-- CONTEÚDO PRINCIPAL / TEXTO DE CHAMADA -->
         <div class="hero-content">
@@ -42,7 +42,7 @@
             <!-- Botões de Ação (Call to Action) -->
             <div class="hero-buttons">
                 <a href="#" class="btn-primary" routerLink="/biscoitos">Ver Ofertas Monstruosas 👻</a>
-                <a href="#" class="btn-secondary" routerLink="">Nossos Serviços 🚐</a>
+                <a href="#" class="btn-secondary" routerLink="/area-tutor">Nossos Serviços 🚐</a>
             </div>
         </div>
 
@@ -52,6 +52,5 @@
         </div>
 
     </div>
-    <app-rodape/>
-
+    <app-rodape />
 </div>
