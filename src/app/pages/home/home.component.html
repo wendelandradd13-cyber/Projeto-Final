@@ -9,9 +9,13 @@
 
         <!-- Parte de Logout (Área do Detetive Autenticado) -->
         <div class="auth-links">
-            <button class="btn-logout" (click)="logout()">
-                Sair do Caso 🚪🏃‍♂️
-            </button>
+            <button type="submit" class="btn-login" (click)="ligarMaquinaDoMisterio()">
+            Entrar na Máquina do Mistério 🚐
+          </button>
+
+          @if (exibirComponente) {
+            <app-login></app-login>
+          }
         </div>
 
     </div>

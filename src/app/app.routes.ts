@@ -4,7 +4,7 @@ import path from 'path';
 export const routes: Routes = [
 
     {
-        path: "",
+        path: "login",
         pathMatch: "full",
         loadComponent: () => {
             return import("./pages/login/login.component")
@@ -13,7 +13,7 @@ export const routes: Routes = [
     },
      
     {
-        path: "home",
+        path: "",
         pathMatch: "full",
         loadComponent: () => {
             return import("./pages/home/home.component")

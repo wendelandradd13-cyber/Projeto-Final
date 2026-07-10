@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 
 import { RodapeComponent } from '../../componentes/rodape/rodape.component';
-import { PetService, Pet } from '../../pet.service';
+import { PetService, Pet } from '../../componentes/services/pet.service';
 
 @Component({
   selector: 'app-area-tutor',
