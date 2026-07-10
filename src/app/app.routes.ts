@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 import path from 'path';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+
 
 export const routes: Routes = [
 
-    {
-        path: "login",
-        pathMatch: "full",
-        loadComponent: () => {
-            return import("./pages/login/login.component")
-            .then(c => c.LoginComponent)
-        },
-    },
+  
      
     {
         path: "",
@@ -74,5 +71,24 @@ export const routes: Routes = [
             .then(c => c.AreaTutorComponent)
         }
     },
+
+     {
+        path: "cadastro",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import("./pages/cadastro/cadastro.component")
+            .then(c => c.CadastroComponent)
+        }
+    },
+
+    {
+    path: '',
+    component: HomeComponent, 
+    children: [
+      { path: 'login', component: LoginComponent },     
+      { path: 'cadastro', component: CadastroComponent } 
+    ]
+  },
+  
 
 ];

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
-  imports: [RouterLink],
+  standalone: true,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  @Output() irParaCadastro = new EventEmitter<void>();
+  @Output() fecharModal = new EventEmitter<void>();
 }

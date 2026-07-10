@@ -30,6 +30,14 @@
         </label>
       </div>
 
+      <button type="button" class="btn-fechar" (click)="fecharModal.emit()">✕</button>
+
+      <div class="cadastro">
+        <label>
+          Não tem conta, crie <a href="javascript:void(0)" (click)="irParaCadastro.emit()">Aqui</a>
+        </label>
+      </div>
+
       <button type="submit" class="btn-login" routerLink="">Entrar na Máquina do Mistério 🚐</button>
 
     </form>

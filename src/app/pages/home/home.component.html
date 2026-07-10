@@ -1,57 +1,62 @@
 <div class="fundo">
-    <!-- BARRA SUPERIOR -->
-    <div class="top-bar">
-
-        <!-- Logo Temático -->
-        <div class="logo">
-            <span class="scooby-text">Scooby</span><span class="shop-text">Shop🐾</span>
-        </div>
-
-        <!-- Parte de Logout (Área do Detetive Autenticado) -->
-        <div class="auth-links">
-            <button type="submit" class="btn-login" (click)="ligarMaquinaDoMisterio()">
-            Entrar na Máquina do Mistério 🚐
-          </button>
-
-          @if (exibirComponente) {
-            <app-login></app-login>
-          }
-        </div>
-
+  <!-- BARRA SUPERIOR -->
+  <div class="top-bar">
+    <div class="logo">
+      <span class="scooby-text">Scooby</span><span class="shop-text">Shop🐾</span>
     </div>
 
-   <!-- BARRA DE NAVEGAÇÃO DE CATEGORIAS -->
-    <nav class="nav-bar">
-        <ul>
-            <li><a href="#" routerLink="/biscoitos">Biscoitos Scooby <span class="material-symbols-outlined arrow"></span></a></li>
-            <li><a href="#" routerLink="/salsicha-cia">Salsicha & Cia <span class="material-symbols-outlined arrow"></span></a></li>
-            <li><a href="#" routerLink="/linha-antimonstro">Linha Antimonstros <span class="material-symbols-outlined arrow"></span></a></li>
-            <li><a href="#" routerLink="/maquina-misterio">Máquina de Mistério <span class="material-symbols-outlined arrow"></span></a></li>
-            <li><a href="#" routerLink="/bau-disfarce">Baú de Disfarces <span class="material-symbols-outlined arrow"></span></a></li>
-        </ul>
-    </nav>
+    <div class="auth-links">
+      <button type="button" class="btn-login" (click)="ligarMaquinaDoMisterio()">
+        Entrar na Máquina do Mistério 🚐
+      </button>
 
-     <div class="meio">
+      @if (telaAtiva === 'login') {
+      <app-login (irParaCadastro)="telaAtiva = 'cadastro'" (fecharModal)="telaAtiva = 'nenhuma'">
+      </app-login>
+      } @else if (telaAtiva === 'cadastro') {
+      <app-cadastro (irParaLogin)="telaAtiva = 'login'" (fecharModal)="telaAtiva = 'nenhuma'">
+      </app-cadastro>
+      }
+    </div>
+  </div>
 
-        <!-- CONTEÚDO PRINCIPAL / TEXTO DE CHAMADA -->
-        <div class="hero-content">
-            <h1>Mistérios no mundo pet? <br><span>Nós resolvemos!</span> 🔎</h1>
-            <p>
-                A fofura do seu pet não é nenhum mistério! Venha garantir o estoque de
-                <strong>Biscoitos Scooby</strong> e petiscos irresistíveis que fariam qualquer um perder o medo de
-                fantasma,
-                para o seu parceiro de quatro patas.
-            </p>
+  <!-- BARRA DE NAVEGAÇÃO DE CATEGORIAS -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="#" routerLink="/biscoitos">Biscoitos Scooby <span class="material-symbols-outlined arrow"></span></a>
+      </li>
+      <li><a href="#" routerLink="/salsicha-cia">Salsicha & Cia <span
+            class="material-symbols-outlined arrow"></span></a></li>
+      <li><a href="#" routerLink="/linha-antimonstro">Linha Antimonstros <span
+            class="material-symbols-outlined arrow"></span></a></li>
+      <li><a href="#" routerLink="/maquina-misterio">Máquina de Mistério <span
+            class="material-symbols-outlined arrow"></span></a></li>
+      <li><a href="#" routerLink="/bau-disfarce">Baú de Disfarces <span
+            class="material-symbols-outlined arrow"></span></a></li>
+    </ul>
+  </nav>
 
-            <!-- Botões de Ação (Call to Action) -->
-            <div class="hero-buttons">
-                <a href="#" class="btn-primary" routerLink="/biscoitos">Ver Ofertas Monstruosas 👻</a>
-                <a href="#" class="btn-secondary" routerLink="/area-tutor">Nossos Serviços 🚐</a>
-            </div>
-        </div>
+  <div class="meio">
 
-        <!-- Sua imagem atual (pode ficar do lado direito usando Flexbox no CSS) -->
-        <!-- <div class="imagem">
+    <!-- CONTEÚDO PRINCIPAL / TEXTO DE CHAMADA -->
+    <div class="hero-content">
+      <h1>Mistérios no mundo pet? <br><span>Nós resolvemos!</span> 🔎</h1>
+      <p>
+        A fofura do seu pet não é nenhum mistério! Venha garantir o estoque de
+        <strong>Biscoitos Scooby</strong> e petiscos irresistíveis que fariam qualquer um perder o medo de
+        fantasma,
+        para o seu parceiro de quatro patas.
+      </p>
+
+      <!-- Botões de Ação (Call to Action) -->
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary" routerLink="/biscoitos">Ver Ofertas Monstruosas 👻</a>
+        <a href="#" class="btn-secondary" routerLink="/area-tutor">Nossos Serviços 🚐</a>
+      </div>
+    </div>
+
+    <!-- Sua imagem atual (pode ficar do lado direito usando Flexbox no CSS) -->
+    <!-- <div class="imagem">
             <img src="Scooby-Doo.jpg" alt="Scooby-Doo assustado mas feliz">
         </div> -->
 
@@ -78,28 +83,29 @@
   </button>
 </div> -->
 
-<div id="carouselExampleRide" class="carousel slide carrosel carrosel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner" >
-    <div class="carousel-item active" data-bs-interval="4000">
-      <img src="slide1.png" class="d-block w-100" alt="...">
+    <div id="carouselExampleRide" class="carousel slide carrosel carrosel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+          <img src="slide1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="slide2-1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="slide3-1.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-item" data-bs-interval="4000">
-      <img src="slide2-1.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item" data-bs-interval="4000">
-      <img src="slide3-1.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
-    </div>
-    <app-rodape />
+  </div>
+  <app-rodape />
 </div>
+<router-outlet></router-outlet>
