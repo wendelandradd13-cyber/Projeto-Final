@@ -1,5 +1,7 @@
-import { Component, Input, inject } from '@angular/core'; // 1. Adicionamos o 'inject' aqui
+import { Component, Input, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-category-header',
@@ -9,21 +11,20 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './category-header.component.css'
 })
 export class CategoryHeaderComponent {
-  // 2. INJETAMOS O ROUTER DO ANGULAR AQUI DENTRO 🔽
   private router = inject(Router);
+  private authService = inject(AuthService); // 2. Injete o AuthService aqui
 
-  // Portas de entrada do componente com valores padrão
   @Input() titulo: string = 'Categoria';
   @Input() descricao: string = 'Confira nossos produtos pet.';
 
   logout() {
-    // 1. Limpeza de sessão (se houver)
-    // localStorage.removeItem('usuario_logado');
+    // 3. Chama o logout do serviço (ele limpa o localStorage['app_user'] e o estado)
+    this.authService.logout();
     
-    // 2. Feedback para o usuário
+    // 4. Feedback para o usuário
     alert('Sessão encerrada com sucesso. Até a próxima investigação! 🚐💨');
 
-    // 3. Redireciona para a raiz (sua tela de login)
+    // 5. Redireciona para a raiz (sua tela de login/home)
     this.router.navigate(['']);
   }
 }

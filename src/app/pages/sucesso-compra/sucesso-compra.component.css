@@ -1,0 +1,181 @@
+/* Container que centraliza o card na tela */
+.sucesso-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* O Card Principal da Máquina do Mistério */
+.sucesso-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  border-top: 8px solid #20b2aa;
+}
+
+/* Ícone animado no topo */
+.icon-sucesso {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: pular 1s ease infinite alternate;
+}
+
+@keyframes pular {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.sucesso-card h2 {
+  color: #ff6b6b;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+.sucesso-card h3 {
+  color: #333333;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.sucesso-card p {
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+hr {
+  border: 0;
+  border-top: 2px dashed #e0e0e0;
+  margin: 25px 0;
+}
+
+.sucesso-card h4 {
+  color: #444444;
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+/* Lista de Itens Comprados */
+.lista-itens {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.item-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.95rem;
+  color: #444444;
+}
+
+.item-linha:last-child {
+  border-bottom: none;
+}
+
+/* Seção do Preço Total */
+.total-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333333;
+  padding: 0 5px;
+  margin-bottom: 30px;
+}
+
+.preco-total {
+  color: #20b2aa;
+  font-size: 1.4rem;
+}
+
+/* Botão para voltar a navegar */
+.btn-voltar {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  width: 100%;
+}
+
+.btn-voltar:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Alinha o preço e a lixeira no lado direito */
+.item-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botão pequeno de remover item */
+.btn-remover-item {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px;
+  transition: transform 0.2s;
+}
+
+.btn-remover-item:hover {
+  transform: scale(1.2);
+}
+
+/* Container para os botões inferiores ficarem bem alinhados */
+.grupo-botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Botão Verde de Confirmar Compra */
+.btn-finalizar {
+  background-color: #2ec4b6; /* Verde água bem moderno */
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(46, 196, 182, 0.3);
+  width: 100%;
+}
+
+.btn-finalizar:hover {
+  background-color: #20b2aa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 196, 182, 0.4);
+}
+
+.carrinho-vazio {
+  color: #999999;
+  font-style: italic;
+  padding: 15px 0;
+}

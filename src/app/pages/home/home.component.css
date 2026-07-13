@@ -258,6 +258,14 @@
   object-fit: cover;
 }
 
+.login {
+  border-radius: 15px;
+  border: none;
+  padding: 8px;
+  color: #ffffff;
+  background-color: #ff9f1c;
+}
+
 /* Para telas de tablets e celulares (abaixo de 768px) */
 @media (max-width: 768px) {
   .top-bar {

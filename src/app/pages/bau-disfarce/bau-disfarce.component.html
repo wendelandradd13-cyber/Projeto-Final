@@ -1,23 +1,22 @@
 <div class="fundo">
-    <app-category-header titulo="Baú de Disfarces 🎭" descricao="De gravatas elegantes a fantasias divertidas, encontre o disfarce perfeito para o seu parceiro de mistérios
-            desmascarar qualquer vilão com muito estilo!">
+    <app-category-header titulo="Baú de Disfarces 🎭" descricao="De gravatas elegantes a fantasias divertidas, encontre o disfarce perfeito para o seu parceiro de mistérios desmascarar qualquer vilão com muito estilo!">
     </app-category-header>
 
     <div class="flex">
         <main class="produtos-container">
             <section class="products-grid">
+                
                 <div class="product-card">
                     <div class="product-image">
                         <img src="capa-fantasma.png" alt="Um cachorrinho usando uma capa branca de fantasma.">
                     </div>
                     <div class="product-info">
                         <h2 class="fontes-bau">Capa Fantasma do Lençol</h2>
-                        <p class="text-bau">O disfarce mais clássico de todos! Uma capa branca super leve e confortável para o seu pet se
-                            misturar no cenário dos castelos assombrados (ou só ficar fofo no Halloween)</p>
+                        <p class="text-bau">O disfarce mais clássico de todos! Uma capa branca super leve e confortável para o seu pet se misturar no cenário dos castelos assombrados (ou só ficar fofo no Halloween)</p>
                     </div>
                     <div class="price-row">
                         <span class="price">R$ 19,99</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <button class="btn-buy" (click)="comprarProduto('Capa Fantasma do Lençol', 19.99)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
 
@@ -28,13 +27,11 @@
                     </div>
                     <div class="product-info">
                         <h2 class="fontes-bau">Lenço Investigador Fred</h2>
-                        <p class="text-bau">Inspirado no famoso lenço laranja do Fred. Dá um toque de liderança, elegância e estilo para
-                            o
-                            seu pet chamar a atenção em qualquer passeio na Máquina de Mistério.</p>
+                        <p class="text-bau">Inspirado no famoso lenço laranja do Fred. Dá um toque de liderança, elegância e estilo para o seu pet chamar a atenção em qualquer passeio na Máquina de Mistério.</p>
                     </div>
                     <div class="price-row">
                         <span class="price">R$ 19,99</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <button class="btn-buy" (click)="comprarProduto('Lenço Investigador Fred', 19.99)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
 
@@ -44,18 +41,16 @@
                     </div>
                     <div class="product-info">
                         <h2 class="fontes-bau">Sobretudo, Mestre dos Disfarces</h2>
-                        <p class="text-bau">Um casaco elegante de tecido macio para os dias mais frios de investigação. Perfeito para
-                            pets
-                            intelectuais que adoram desvendar mistérios e decifrar pistas.</p>
+                        <p class="text-bau">Um casaco elegante de tecido macio para os dias mais frios de investigação. Perfeito para pets intelectuais que adoram desvendar mistérios e decifrar pistas.</p>
                     </div>
                     <div class="price-row">
                         <span class="price">R$ 64,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <button class="btn-buy" (click)="comprarProduto('Sobretudo, Mestre dos Disfarces', 64.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
+
             </section>
         </main>
-        
     </div>
 </div>
 <app-rodape />

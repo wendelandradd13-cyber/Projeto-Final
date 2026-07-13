@@ -4,6 +4,8 @@ import { Router, RouterLink } from '@angular/router';
 
 import { RodapeComponent } from '../../componentes/rodape/rodape.component';
 import { PetService, Pet } from '../../componentes/services/pet.service';
+import { AuthService } from '../../componentes/services/auth.service';
+
 
 @Component({
   selector: 'app-area-tutor',
@@ -19,6 +21,7 @@ import { PetService, Pet } from '../../componentes/services/pet.service';
 export class AreaTutorComponent implements OnInit {
   private router = inject(Router);
   private petService = inject(PetService);
+  private authService = inject(AuthService);
 
   petSessao!: Pet;
 
@@ -76,8 +79,14 @@ export class AreaTutorComponent implements OnInit {
     }
   }
 
-  logout() {
-    alert('Sessão encerrada.');
+   logout() {
+    // 3. Chama o logout do serviço (ele limpa o localStorage['app_user'] e o estado)
+    this.authService.logout();
+    
+    // 4. Feedback para o usuário
+    alert('Sessão encerrada com sucesso. Até a próxima investigação! 🚐💨');
+
+    // 5. Redireciona para a raiz (sua tela de login/home)
     this.router.navigate(['']);
   }
 }

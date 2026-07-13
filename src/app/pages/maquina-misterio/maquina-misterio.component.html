@@ -5,20 +5,24 @@
 
     <main class="produtos-container">
         <section class="products-grid">
+            
+            <!-- Produto 1: Cinto de Segurança -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="cinto-seguranca.png" alt="Cinto de Segurança Pet">
                 </div>
                 <div class="product-info">
                     <h3>Cinto de Segurança, Pé na Estrada</h3>
-                    <p class="description">Cinto ajustável que engata direto no fecho do carro. Protege seu parceiro em
-                        qualquer curva fechada ou perseguição.</p>
+                    <p class="description">Cinto ajustável que engata direto no fecho do carro. Protege seu parceiro em qualquer curva fechada ou perseguição.</p>
                     <div class="price-row">
                         <span class="price">R$ 28,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <!-- Alterado aqui 🔽 -->
+                        <button class="btn-buy" (click)="comprarProduto('Cinto de Segurança, Pé na Estrada', 28.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
+
+            <!-- Produto 2: Capa Protetora -->
             <div class="product-card">
                 <span class="badge-tag">Mais Vendido! 🔥</span>
                 <div class="product-image">
@@ -26,32 +30,32 @@
                 </div>
                 <div class="product-info">
                     <h3>Capa Protetora Anti-Lama</h3>
-                    <p class="description">Perfeita para proteger os bancos do carro após passeios no parque ou
-                        investigações em pântanos assombrados. Impermeável.</p>
+                    <p class="description">Perfeita para proteger os bancos do carro após passeios no parque ou investigações em pântanos assombrados. Impermeável.</p>
                     <div class="price-row">
                         <span class="price">R$ 89,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <!-- Alterado aqui 🔽 -->
+                        <button class="btn-buy" (click)="comprarProduto('Capa Protetora Anti-Lama', 89.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Produto 3: Garrafa Portátil -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="garrafa-portatil.png" alt="Garrafa de Água Portátil">
                 </div>
                 <div class="product-info">
                     <h3>Garrafa Portátil Sede de Aventura</h3>
-                    <p class="description">Hidratação rápida na estrada. Garrafa 2 em 1 com bico anatômico para o cão
-                        beber
-                        água em qualquer lugar.</p>
+                    <p class="description">Hidratação rápida na estrada. Garrafa 2 em 1 com bico anatômico para o cão beber água em qualquer lugar.</p>
                     <div class="price-row">
                         <span class="price">R$ 34,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <!-- Alterado aqui 🔽 -->
+                        <button class="btn-buy" (click)="comprarProduto('Garrafa Portátil Sede de Aventura', 34.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
+
         </section>
     </main>
-    
 </div>
 <app-rodape />

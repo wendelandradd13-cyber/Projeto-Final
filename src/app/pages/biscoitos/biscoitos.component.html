@@ -4,7 +4,6 @@
     </app-category-header>
 
     <main class="produtos-container">
-
         <section class="products-grid">
 
             <div class="product-card">
@@ -14,11 +13,10 @@
                 </div>
                 <div class="product-info">
                     <h3>Biscoito Scooby Tradicional</h3>
-                    <p class="description">A receita clássica que faz o Salsicha e o Scooby pularem de alegria. Edição
-                        em lata.</p>
+                    <p class="description">A receita clássica que faz o Salsicha e o Scooby pularem de alegria. Edição em lata.</p>
                     <div class="price-row">
                         <span class="price">R$ 29,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <button class="btn-buy" (click)="comprarProduto('Biscoito Scooby Tradicional', 29.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
@@ -29,11 +27,10 @@
                 </div>
                 <div class="product-info">
                     <h3>Snack Biscoito da Coragem</h3>
-                    <p class="description">Sabor frango defumado. Ideal para adestramento e para perder o medo de
-                        monstros.</p>
+                    <p class="description">Sabor frango defumado. Ideal para adestramento e para perder o medo de monstros.</p>
                     <div class="price-row">
                         <span class="price">R$ 18,50</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <button class="btn-buy" (click)="comprarProduto('Snack Biscoito da Coragem', 18.50)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
@@ -44,17 +41,15 @@
                 </div>
                 <div class="product-info">
                     <h3>Super Biscoito Scooby Giga</h3>
-                    <p class="description">Um biscoito tamanho gigante para pets de grande porte (ou para os que têm
-                        muita fome).</p>
+                    <p class="description">Um biscoito tamanho gigante para pets de grande porte (ou para os que têm muita fome).</p>
                     <div class="price-row">
                         <span class="price">R$ 34,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <button class="btn-buy" (click)="comprarProduto('Super Biscoito Scooby Giga', 34.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
 
         </section>
     </main>
-    
 </div>
 <app-rodape />

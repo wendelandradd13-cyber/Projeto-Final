@@ -176,3 +176,12 @@
 .btn-cadastro:active {
   transform: translateY(0);
 }
+
+.fechar {
+  position: relative;
+  left: 50%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}

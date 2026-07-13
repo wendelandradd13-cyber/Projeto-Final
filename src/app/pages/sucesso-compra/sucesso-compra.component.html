@@ -1,0 +1,50 @@
+<div class="sucesso-wrapper">
+  <div class="sucesso-card">
+    <div class="icon-sucesso">🎉 🚐</div>
+    <h2>Máquina do Mistério 🛒</h2>
+    
+    @if (compraFinalizada) {
+      <h3>Sua compra foi realizada com sucesso!</h3>
+      <p>A Máquina do Mistério já está na estrada preparando a entrega dos seus pedidos do Scooby. 🐾✨</p>
+    } @else {
+      <h3>Seu Carrinho de Investigações</h3>
+      <p>Confira os itens que você separou para a próxima missão!</p>
+    }
+
+    <hr>
+
+    <h4>Itens no Carrinho:</h4>
+    <div class="lista-itens">
+      @for (item of produtosComprados; track item.id) {
+        <div class="item-linha">
+          <span>🐾 {{ item.nome }}</span>
+          <div class="item-acoes">
+            <strong>R$ {{ item.preco.toFixed(2) }}</strong>
+            @if (!compraFinalizada) {
+              <button class="btn-remover-item" (click)="removerItem(item.id)" title="Remover item">🗑️</button>
+            }
+          </div>
+        </div>
+      } @empty {
+        <p class="carrinho-vazio">Nenhum item por aqui... O baú está vazio! 🦴</p>
+      }
+    </div>
+
+    @if (produtosComprados.length > 0) {
+      <div class="total-secao">
+        <span>Total:</span>
+        <span class="preco-total">R$ {{ totalDaCompra.toFixed(2) }}</span>
+      </div>
+    }
+
+    <div class="grupo-botoes">
+      @if (!compraFinalizada && produtosComprados.length > 0) {
+        <button class="btn-finalizar" (click)="confirmarCompra()">Confirmar e Finalizar Compra 💳</button>
+      }
+
+      <button routerLink="/" class="btn-voltar" (click)="aoVoltar()">
+        {{ compraFinalizada ? 'Iniciar Nova Investigação (Home)' : 'Continuar Investigando (Home)' }}
+      </button>
+    </div>
+  </div>
+</div>

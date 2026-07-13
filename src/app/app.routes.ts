@@ -89,6 +89,15 @@ export const routes: Routes = [
       { path: 'cadastro', component: CadastroComponent } 
     ]
   },
+
+  {
+    path: "sucesso-compra",
+    pathMatch: "full",
+    loadComponent: () => {
+        return import("./pages/sucesso-compra/sucesso-compra.component")
+        .then(c => c.SucessoCompraComponent)
+    }
+  }
   
 
 ];

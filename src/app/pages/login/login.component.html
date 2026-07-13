@@ -1,5 +1,6 @@
 <div class="login-wrapper">
   <div class="login-card">
+    <button type="button" class="btn-fechar fechar" (click)="fecharModal.emit()">✕</button>
     <div class="login-inside">
       <span class="scooby-text">Scooby</span><span class="shop-text">Shop🐾</span>
     </div>
@@ -10,27 +11,26 @@
       <p>A fofura do seu pet não é segredo. Acesse para encontrar os melhores petiscos e brinquedos.</p>
     </div>
 
-    <form class="login-form">
+    <form class="login-form" #loginForm="ngForm" (ngSubmit)="executarLogin(loginForm)">
 
       <div class="input-group">
         <label for="email">E-mail ou Usuário do Detetive</label>
-        <input type="email" id="email" placeholder="Seu e-mail..." required>
+        <input type="text" id="email" name="usuario" [(ngModel)]="usuarioDigitado" placeholder="Seu e-mail..." required>
       </div>
 
       <div class="input-group">
         <label for="password">Senha Ultra-Secreta</label>
-        <input type="password" id="password" placeholder="Sua senha..." required>
+        <input type="password" id="password" name="senha" [(ngModel)]="senhaDigitada" placeholder="Sua senha..."
+          required>
       </div>
 
       <div class="lgpd-consent">
-        <input type="checkbox" id="privacy-policy" required>
+        <input type="checkbox" id="privacy-policy" name="termos" ngModel required>
         <label for="privacy-policy">
-          Estou ciente e aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> do
+          Estou ciente e aceito os <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> do
           ScoobyShop.
         </label>
       </div>
-
-      <button type="button" class="btn-fechar" (click)="fecharModal.emit()">✕</button>
 
       <div class="cadastro">
         <label>
@@ -38,7 +38,7 @@
         </label>
       </div>
 
-      <button type="submit" class="btn-login" routerLink="">Entrar na Máquina do Mistério 🚐</button>
+      <button type="submit" class="btn-login">Entrar na Máquina do Mistério 🚐</button>
 
     </form>
 

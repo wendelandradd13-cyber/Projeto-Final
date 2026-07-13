@@ -6,6 +6,7 @@
     <main class="produtos-container">
         <section class="products-grid">
 
+            <!-- Produto 1: Ração Super Lanche -->
             <div class="product-card">
                 <span class="badge-tag" style="background-color: #00b4d8;">Fome Monstruosa! 🦖</span>
                 <div class="product-image">
@@ -13,47 +14,48 @@
                 </div>
                 <div class="product-info">
                     <h3>Ração Salsicha Super Lanche (15kg)</h3>
-                    <p class="description">Fórmula exclusiva para dar energia e saciar até os cães com apetite
-                        insaciável.</p>
+                    <p class="description">Fórmula exclusiva para dar energia e saciar até os cães com apetite insaciável.</p>
                     <div class="price-row">
                         <span class="price">R$ 189,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <!-- Alterado aqui 🔽 -->
+                        <button class="btn-buy" (click)="comprarProduto('Ração Salsicha Super Lanche (15kg)', 189.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Produto 2: Banquete de Patês -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="combo-sache2.png" alt="Combo de sachês">
                 </div>
                 <div class="product-info">
                     <h3>Banquete de Patês do Salsicha</h3>
-                    <p class="description">Combo com 12 sachês premium nos sabores preferidos da nossa dupla: Carne
-                        Assada e Frango Defumado.</p>
+                    <p class="description">Combo com 12 sachês premium nos sabores preferidos da nossa dupla: Carne Assada e Frango Defumado.</p>
                     <div class="price-row">
                         <span class="price">R$ 45,00</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <!-- Alterado aqui 🔽 -->
+                        <button class="btn-buy" (click)="comprarProduto('Banquete de Patês do Salsicha', 45.00)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Produto 3: Super Tigela Giga -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="tigela-giga.jpg" alt="Comedouro gigante">
                 </div>
                 <div class="product-info">
                     <h3>Super Tigela Giga Sanduíche</h3>
-                    <p class="description">Comedouro com capacidade de 2L para o seu parceiro de mistérios comer sem
-                        pressa.</p>
+                    <p class="description">Comedouro com capacidade de 2L para o seu parceiro de mistérios comer sem pressa.</p>
                     <div class="price-row">
                         <span class="price">R$ 39,90</span>
-                        <button class="btn-buy">Adicionar ao Carrinho 🛒</button>
+                        <!-- Alterado aqui 🔽 -->
+                        <button class="btn-buy" (click)="comprarProduto('Super Tigela Giga Sanduíche', 39.90)">Adicionar ao Carrinho 🛒</button>
                     </div>
                 </div>
             </div>
 
         </section>
     </main>
-    
 </div>
 <app-rodape />
